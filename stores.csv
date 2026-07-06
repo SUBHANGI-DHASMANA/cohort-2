@@ -1,0 +1,51 @@
+store_id,city,region
+1,Denver,West
+2,Seattle,West
+3,Dallas,Southwest
+4,Orlando,Southeast
+5,Houston,Southwest
+6,Nashville,Southeast
+7,Minneapolis,Midwest
+8,Houston,Southwest
+9,Phoenix,Southwest
+10,St. Louis,Midwest
+11,Denver,West
+12,Chicago,Midwest
+13,New York,Northeast
+14,St. Louis,Midwest
+15,Minneapolis,Midwest
+16,Miami,Southeast
+17,Detroit,Midwest
+18,Portland,West
+19,Phoenix,Southwest
+20,Houston,Southwest
+21,Los Angeles,West
+22,Charlotte,Southeast
+23,Cleveland,Midwest
+24,Minneapolis,Midwest
+25,Pittsburgh,Northeast
+26,Pittsburgh,Northeast
+27,Charlotte,Southeast
+28,Miami,Southeast
+29,New York,Northeast
+30,Seattle,West
+31,Austin,Southwest
+32,Charlotte,Southeast
+33,Chicago,Midwest
+34,Austin,Southwest
+35,Pittsburgh,Northeast
+36,Orlando,Southeast
+37,Pittsburgh,Northeast
+38,Detroit,Midwest
+39,Miami,Southeast
+40,Phoenix,Southwest
+41,Buffalo,Northeast
+42,San Francisco,West
+43,Charlotte,Southeast
+44,Los Angeles,West
+45,New York,Northeast
+46,Austin,Southwest
+47,San Francisco,West
+48,Minneapolis,Midwest
+49,New York,Northeast
+50,Chicago,Midwest

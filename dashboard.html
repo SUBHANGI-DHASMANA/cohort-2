@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinPulse — GPU-Accelerated Markdown Optimizer & Inventory Risk Profiler</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <!-- App Layout -->
+    <div class="app-container">
+        
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-logo">
+                <i class="fa-solid fa-bolt logo-icon"></i>
+                <div class="logo-text">
+                    <h1>FinPulse</h1>
+                    <p>RETAIL DEMAND INTELLIGENCE</p>
+                </div>
+            </div>
+            <div class="header-badges">
+                <span class="badge badge-gcp"><i class="fa-brands fa-google-drive"></i> Google Cloud BigQuery</span>
+                <span class="badge badge-nvidia"><i class="fa-solid fa-microchip"></i> NVIDIA RAPIDS L4 GPU</span>
+            </div>
+        </header>
+
+        <!-- Main Dashboard Grid -->
+        <main class="app-content">
+            
+            <!-- Row 1: KPI metrics -->
+            <section class="kpi-grid">
+                <!-- KPI 1 -->
+                <div class="kpi-card glass">
+                    <div class="kpi-icon-wrapper red-glow">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="kpi-info">
+                        <h3>Critical & High Risk SKUs</h3>
+                        <p class="kpi-value" id="kpi-risk-skus">--</p>
+                        <span class="kpi-trend trend-down"><i class="fa-solid fa-arrow-up"></i> 14.8% of total catalog</span>
+                    </div>
+                </div>
+
+                <!-- KPI 2 -->
+                <div class="kpi-card glass">
+                    <div class="kpi-icon-wrapper green-glow">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <div class="kpi-info">
+                        <h3>Recoverable Gross Margin</h3>
+                        <p class="kpi-value" id="kpi-recovered-margin">$--</p>
+                        <span class="kpi-trend trend-up"><i class="fa-solid fa-arrow-trend-up"></i> Est. +115% Sales Velocity Lift</span>
+                    </div>
+                </div>
+
+                <!-- KPI 3 -->
+                <div class="kpi-card glass">
+                    <div class="kpi-icon-wrapper purple-glow">
+                        <i class="fa-solid fa-gauge-high"></i>
+                    </div>
+                    <div class="kpi-info">
+                        <h3>NVIDIA GPU Acceleration</h3>
+                        <p class="kpi-value">22.0x</p>
+                        <span class="kpi-trend trend-gpu"><i class="fa-solid fa-bolt"></i> 0.26s (GPU) vs 5.71s (CPU)</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Row 2: Controls and Gemini Agent -->
+            <section class="action-grid">
+                <!-- Simulation Controls -->
+                <div class="control-panel glass">
+                    <div class="panel-header">
+                        <h2><i class="fa-solid fa-sliders"></i> Markdown Simulator</h2>
+                        <span class="panel-subtitle">Optimize markdown elasticity parameters</span>
+                    </div>
+                    
+                    <div class="control-group">
+                        <div class="control-label">
+                            <span>Critical Risk Discount</span>
+                            <span class="control-value" id="val-critical-disc">30%</span>
+                        </div>
+                        <input type="range" min="10" max="60" value="30" step="5" class="slider" id="slider-critical-disc">
+                    </div>
+
+                    <div class="control-group">
+                        <div class="control-label">
+                            <span>High Risk Discount</span>
+                            <span class="control-value" id="val-high-disc">20%</span>
+                        </div>
+                        <input type="range" min="5" max="40" value="20" step="5" class="slider" id="slider-high-disc">
+                    </div>
+
+                    <div class="control-group">
+                        <div class="control-label">
+                            <span>Slow Moving Discount</span>
+                            <span class="control-value" id="val-slow-disc">10%</span>
+                        </div>
+                        <input type="range" min="0" max="30" value="10" step="5" class="slider" id="slider-slow-disc">
+                    </div>
+                    
+                    <div class="simulator-summary">
+                        <div class="summary-row">
+                            <span>Predicted Inventory Cleared</span>
+                            <strong class="text-green">+82%</strong>
+                        </div>
+                        <div class="summary-row">
+                            <span>Capital Released</span>
+                            <strong id="capital-released">$0.00</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gemini Enterprise Agent Terminal -->
+                <div class="gemini-agent-terminal glass">
+                    <div class="panel-header">
+                        <h2><i class="fa-solid fa-wand-magic-sparkles text-gemini"></i> Gemini Enterprise Assistant</h2>
+                        <span class="badge badge-ai"><i class="fa-solid fa-brain"></i> Active Agent</span>
+                    </div>
+                    <div class="chat-display" id="chat-display">
+                        <div class="chat-message agent">
+                            <i class="fa-solid fa-robot message-avatar"></i>
+                            <div class="message-bubble">
+                                Hello! I'm your retail inventory copilot, integrated with BigQuery and NVIDIA cuDF. Ask me to filter, write, or export markdown schedules.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input-wrapper">
+                        <input type="text" id="chat-input" placeholder="e.g., Which apparel items are at high risk in Boston?">
+                        <button id="btn-chat-send" class="btn-primary-glow"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Row 3: Product Recommendations Table -->
+            <section class="table-section glass">
+                <div class="table-header">
+                    <div class="table-title">
+                        <h2><i class="fa-solid fa-list-check"></i> Markdown Candidates Inventory (Top 100 SKUs)</h2>
+                        <p>Aggregated and clustered dynamically using cuML K-Means</p>
+                    </div>
+                    <div class="table-filters">
+                        <button class="btn-tab active" data-filter="all">All Tiers</button>
+                        <button class="btn-tab" data-filter="Critical Risk (Dead Stock)">Critical Risk</button>
+                        <button class="btn-tab" data-filter="High Risk (Overstock)">High Risk</button>
+                        <button class="btn-tab" data-filter="Slow Moving">Slow Moving</button>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>SKU ID</th>
+                                <th>Risk Category</th>
+                                <th>Stock level</th>
+                                <th>Original Price</th>
+                                <th>Sales Velocity (units/day)</th>
+                                <th>Discount</th>
+                                <th>Expected Lift</th>
+                                <th>Margin Recovered</th>
+                                <th class="text-right">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            <!-- Populated dynamically via JS -->
+                            <tr>
+                                <td colspan="9" class="table-loading">
+                                    <i class="fa-solid fa-spinner fa-spin"></i> Loading SKU recommendations...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>FinPulse — Designed for high-frequency inventory operations. Core analytics pipeline benchmarked at 22x faster execution using GPU registers.</p>
+        </footer>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
