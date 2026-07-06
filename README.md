@@ -4,7 +4,7 @@ Short, self-contained analytics dashboard and data-processing project containing
 
 ## Project Overview
 
-- Interactive dashboard (HTML/JS/CSS) and lightweight Python app for generating and exploring sales and inventory analytics.
+- Interactive dashboard and lightweight Python app for generating and exploring sales and inventory analytics.
 - Includes data generation and pipeline scripts, example CSV datasets, and a Jupyter notebook for experimentation.
 
 ## Contents
