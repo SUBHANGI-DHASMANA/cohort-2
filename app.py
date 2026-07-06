@@ -133,12 +133,12 @@ async def publish_markdown(req: PublishRequest):
             {
                 "schedule_id": schedule_id,
                 "sku_id": req.sku_id,
-                "discount_rate": req.discount_rate,
-                "promo_price": req.promo_price,
+                "discount_rate": round(req.discount_rate, 4),
+                "promo_price": round(req.promo_price, 2),
                 "risk_tier": req.risk_tier,
                 "current_stock": req.current_stock,
-                "expected_lift": req.expected_lift,
-                "recovered_margin": req.recovered_margin,
+                "expected_lift": round(req.expected_lift, 4),
+                "recovered_margin": round(req.recovered_margin, 2),
                 "status": "ACTIVE"
             }
         ]

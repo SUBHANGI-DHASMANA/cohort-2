@@ -5,6 +5,7 @@ __pycache__/
 
 # Jupyter notebook checkpoints
 .ipynb_checkpoints/
+accelerated_analytics.ipynb
 
 # macOS metadata
 .DS_Store
